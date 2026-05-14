@@ -1,0 +1,1 @@
+# class responsible for fetching Nutrislice API and cleaning items

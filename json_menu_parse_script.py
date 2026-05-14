@@ -9,6 +9,12 @@ day0_date = day0["date"]
 day0_menu_items = day0["menu_items"]
 
 dates_in_curr_week = []
+days = data.get("days")
+
+for date in days:
+    dates_in_curr_week.append(date.get("date"))
+
+print(dates_in_curr_week)
 
 num_items = 0
 for item in day0_menu_items:
