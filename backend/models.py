@@ -26,3 +26,4 @@ class CachedMenu(db.Model):
     date = db.Column(db.Date, nullable=False)
     meal_type = db.Column(db.String(50), nullable=False)
     menu_json = db.Column(db.JSON, nullable=False)
+

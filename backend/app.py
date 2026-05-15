@@ -10,6 +10,7 @@ app = Flask(__name__)
 app.register_blueprint(auth)
 app.register_blueprint(profile)
 app.register_blueprint(meal_planner)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///nutrislice.db"
 
 
 
