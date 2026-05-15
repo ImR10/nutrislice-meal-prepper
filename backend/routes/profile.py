@@ -1,3 +1,3 @@
 from flask import Blueprint
 
-profile.
+profile = Blueprint('profile', __name__)
