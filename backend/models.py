@@ -9,6 +9,14 @@ class User(db.Model):
     password_hash = db.Column(db.String(16), Nullable=False)
     name = db.Column(db.String(20), Nullable=False)
 
+    def to_dict(self):
+        return {
+            "id" : self.id,
+            "email" : self.email,
+            "password_hash": self.password_hash,
+            "name" : self.name
+        }
+
 
 class UserProfile(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -20,6 +28,18 @@ class UserProfile(db.Model):
     activity_level = db.Column(db.String(50), nullable=False)
     goal = db.Column(db.String(50), nullable=False)
 
+    def to_dict(self):
+        return {
+            "id" : self.id,
+            "user_id" : self.user_id,
+            "age": self.age,
+            "gender" : self.gender,
+            "height" : self.height,
+            "weight" : self.weight,
+            "activitiy_level": self.activity_level,
+            "goal" : self.goal,
+        }
+
 
 class CachedMenu(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -27,3 +47,12 @@ class CachedMenu(db.Model):
     meal_type = db.Column(db.String(50), nullable=False)
     menu_json = db.Column(db.JSON, nullable=False)
 
+    def to_dict(self):
+        return {
+            "id" : self.id,
+            "date" : self.date.isoformat(),
+            "meal_type": self.meal_type,
+            "menu_json" : self.menu_json
+        }
+
+ 
