@@ -27,5 +27,23 @@ def register():
 # verify user credentials and return JWT
 @auth.route('/login', methods=['POST'])
 def login():
-    pass
+    data = request.get_json()
+
+    # find user by email
+    user = User.query.filter_by(email = data["email"]).first()
+
+    # check if email exists
+    if (user == None):
+        return jsonify({"Error": "Email doesn't exist"})
+    
+    # check if password matches the one in User db
+    if not (bcrypt.check_password_hash(user.password_hash, data["password"])):
+        return jsonify({"Error": "Password is incorrect"})
+
+    # return JWT
+    token = create_access_token(identity=user.id)
+    return jsonify({"token" : token}), 200
+    
+    
+    
 
