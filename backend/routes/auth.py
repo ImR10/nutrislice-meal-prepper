@@ -21,7 +21,7 @@ def register():
     db.session.add(new_account)
     db.session.commit()
 
-    token = create_access_token(identity=new_account.id)
+    token = create_access_token(identity=str(new_account.id))
     return jsonify({"token": token}), 201
 
 # verify user credentials and return JWT
@@ -41,7 +41,7 @@ def login():
         return jsonify({"Error": "Password is incorrect"})
 
     # return JWT
-    token = create_access_token(identity=user.id)
+    token = create_access_token(identity=str(user.id))
     return jsonify({"token" : token}), 200
     
     

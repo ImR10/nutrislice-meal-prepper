@@ -19,6 +19,7 @@ app.register_blueprint(profile)
 app.register_blueprint(meal_planner)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///nutrislice.db"
 app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = False
 
 @app.route("/", methods=["GET"])
 def home():
