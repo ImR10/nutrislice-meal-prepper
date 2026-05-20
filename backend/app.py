@@ -7,6 +7,7 @@ from extensions import db, bcrypt, jwt
 from routes.auth import auth
 from routes.meal_planner import meal_planner
 from routes.profile import profile
+from services import nutrislice
 
 import os
 from dotenv import load_dotenv
@@ -23,6 +24,7 @@ app.config["JWT_ACCESS_TOKEN_EXPIRES"] = False
 
 @app.route("/", methods=["GET"])
 def home():
+    
     return "App runs."
 
 db.init_app(app)
