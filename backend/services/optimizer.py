@@ -1,4 +1,5 @@
 # class responsible for optimizing menu options for user
 
 class Optimizer:
-    pass
+    def greedy_optimizer():
+        pass

@@ -47,6 +47,15 @@ class Nutrition():
             "fats_g" : required_fats
         }
 
+    def get_macros(self, data):
+        user_bmr = Nutrition().calculate_BMR(data["gender"], data["height"], data["weight"], data["age"])
+        user_tdee = Nutrition().calculate_TDEE(user_bmr, data["activity_level"])
+        user_macros = Nutrition().calculate_macros(user_tdee, data["goal"])
+
+        return user_macros
+
+
+
 
 
 

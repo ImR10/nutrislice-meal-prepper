@@ -24,7 +24,6 @@ app.config["JWT_ACCESS_TOKEN_EXPIRES"] = False
 
 @app.route("/", methods=["GET"])
 def home():
-    
     return "App runs."
 
 db.init_app(app)
