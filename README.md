@@ -2,9 +2,6 @@
 
 A full-stack meal planning app for UGA students with a dining hall pass. The backend pulls live menu data from the NutriSlice API, calculates calorie and macro targets from user metrics, and recommends meals based on what is actually available that day.
 
-**Author:** Rizwan Hoque  
-**Status:** V1 in progress (Flask backend working; React frontend planned)
-
 ---
 
 ## What it does
@@ -220,20 +217,6 @@ Menus are cached once per `(date, meal_type)` so NutriSlice is not hit repeatedl
 
 ---
 
-## Current progress
-
-- [x] Flask app + blueprints
-- [x] SQLite models (`User`, `UserProfile`, `CachedMenu`)
-- [x] Register / login with JWT + bcrypt
-- [x] Profile GET / POST (JWT protected)
-- [x] NutriSlice fetch + basic cache path for `/menu`
-- [ ] Harden menu cleaning / date matching
-- [ ] Finish greedy optimizer + `/meal-plan`
-- [ ] React frontend (login, profile form, meal plan display)
-- [ ] End-to-end polish + README usage screenshots
-
----
-
 ## V2 backlog
 
 - Swap greedy optimizer for PuLP linear programming
@@ -245,7 +228,7 @@ Menus are cached once per `(date, meal_type)` so NutriSlice is not hit repeatedl
 
 ---
 
-## Notes for contributors / future you
+## Notes for contributors / future
 
 - Test backend routes in Postman **before** wiring React.
 - NutriSlice’s API is undocumented and can change — caching helps catch parse breaks early.
